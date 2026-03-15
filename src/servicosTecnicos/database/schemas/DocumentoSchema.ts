@@ -11,7 +11,10 @@ const DocumentoSchema = new Schema<DocumentoDocument>(
       enum: [
         'ata', 'balancete', 'relatorio', 'estatuto', 'contrato',
         'planta', 'matricula', 'escritura', 'iptu',
-        'identidade', 'cpf', 'comprovante_residencia', 'outros',
+        'identidade', 'cpf', 'comprovante_residencia',
+        'habite_se', 'laudo_tecnico', 'memorial_descritivo',
+        'certidao_negativa', 'levantamento_topografico', 'alvara',
+        'outros',
       ],
       default: 'outros',
     },

@@ -11,6 +11,12 @@ export type CategoriaDocumento =
   | 'identidade'
   | 'cpf'
   | 'comprovante_residencia'
+  | 'habite_se'
+  | 'laudo_tecnico'
+  | 'memorial_descritivo'
+  | 'certidao_negativa'
+  | 'levantamento_topografico'
+  | 'alvara'
   | 'outros';
 
 export type StatusDocumento = 'ativo' | 'inativo' | 'arquivado';
