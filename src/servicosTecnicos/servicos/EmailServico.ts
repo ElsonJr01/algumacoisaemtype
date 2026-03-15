@@ -48,7 +48,7 @@ export class EmailServico {
           </div>
           <div style="background: #0D3D22; padding: 20px; text-align: center;">
             <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin: 0;">
-              © 2025 RegularizaJá — CREA-SP / UNESP / UNIVESP
+              © 2026 RegularizaJá — Tecnologia a serviço da regularização fundiária em comunidades carentes.
             </p>
           </div>
         </div>
