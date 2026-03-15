@@ -3,7 +3,6 @@ dist
 .env
 .env.*
 !.env.example
-uploads/
 *.log
 
 node_modules
