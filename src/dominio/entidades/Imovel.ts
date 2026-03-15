@@ -24,7 +24,7 @@ export interface Endereco {
 export interface Imovel {
   id?: string;
   protocolo?: string;
-  proprietarioId: string;
+  proprietarioId?: string;
   proprietarioNome: string;
   proprietarioCpf: string;
   proprietarioTelefone: string;

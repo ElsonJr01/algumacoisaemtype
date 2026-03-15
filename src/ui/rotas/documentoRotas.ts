@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { DocumentoControlador } from '../controladores/DocumentoControlador';
 import { autenticar, autorizar } from '../middlewares/autenticacaoMiddleware';
-import { upload } from '@servicosTecnicos/uploads/multerConfig';
+import { upload } from '../../servicosTecnicos/uploads/multerConfig';
 
 const router = Router();
 const ctrl = new DocumentoControlador();
