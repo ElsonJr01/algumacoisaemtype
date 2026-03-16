@@ -8,6 +8,7 @@ export class DocumentoRepositorio implements IDocumentoRepositorio {
       id: doc._id.toString(),
       titulo: doc.titulo,
       categoria: doc.categoria,
+      etapa: doc.etapa,
       nota: doc.nota,
       data: doc.data,
       nomeArquivo: doc.nomeArquivo,
@@ -37,7 +38,9 @@ export class DocumentoRepositorio implements IDocumentoRepositorio {
     const query: any = { status: { $ne: 'inativo' } };
     if (filtros?.status) query.status = filtros.status;
     if (filtros?.categoria) query.categoria = filtros.categoria;
+    if (filtros?.etapa) query.etapa = filtros.etapa;
     if (filtros?.imovelId) query.imovelId = filtros.imovelId;
+    if (filtros?.visibilidade) query.visibilidade = filtros.visibilidade;
     if (filtros?.busca) query.$or = [
       { titulo: { $regex: filtros.busca, $options: 'i' } },
       { nota: { $regex: filtros.busca, $options: 'i' } },
@@ -47,7 +50,7 @@ export class DocumentoRepositorio implements IDocumentoRepositorio {
       DocumentoModel.find(query).sort({ criadoEm: -1 }).skip(skip).limit(limite),
       DocumentoModel.countDocuments(query),
     ]);
-    return { documentos: docs.map(this.mapear), total };
+    return { documentos: docs.map(d => this.mapear(d)), total };
   }
 
   async listarPublicos(filtros?: any, pagina = 1, limite = 20) {
@@ -62,7 +65,7 @@ export class DocumentoRepositorio implements IDocumentoRepositorio {
       DocumentoModel.find(query).sort({ criadoEm: -1 }).skip(skip).limit(limite),
       DocumentoModel.countDocuments(query),
     ]);
-    return { documentos: docs.map(this.mapear), total };
+    return { documentos: docs.map(d => this.mapear(d)), total };
   }
 
   async atualizar(id: string, dados: Partial<Documento>): Promise<Documento | null> {
